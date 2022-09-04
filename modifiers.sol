@@ -60,10 +60,10 @@ contract UserBalance {
         require(_amount <= uint256(Fee), "AmountToSmall()");
         _;
      }
-    uint256 private Fee;
+    uint256 private constant Fee = 20;
     function addFund(uint256 _amount) public returnNewBalance(_amount){
         balance[msg.sender] = balance[msg.sender] + _amount;
     }
  
-}
+} 
 
